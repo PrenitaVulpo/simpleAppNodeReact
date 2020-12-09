@@ -11,5 +11,10 @@ module.exports = {
         //adiciona as funcionalidades do react na conversão do JS
         //como por exemplo, adicionar HTML dentro do JS
         '@babel/preset-react'
+    ],
+    //pedaços de presets que ajudam o babel com funcionalidades necessárias
+    plugins: [
+        //faz com que alguns comandos executados no ambiente de desenvolvimento referenciem o runtime
+        '@babel/plugin-transform-runtime'
     ]
 }

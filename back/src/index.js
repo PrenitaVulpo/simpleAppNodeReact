@@ -1,7 +1,10 @@
 const express = require('express');
 const {v4: uuid, validate: isUuid} = require('uuid');
+const cors = require('cors');
 const app = express();
+
 app.use(express.json());
+app.use(cors());
 
 const projects = [];
 
@@ -33,7 +36,7 @@ app.post('/projects', (req,response) => {
 
     projects.push(project);
 
-    return response.json({message: "projeto criado com sucesso"});
+    return response.json(project);
 });
 
 app.put('/projects/:id', validadeProjectID, (req,response) => {

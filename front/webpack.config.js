@@ -28,10 +28,24 @@ module.exports = {
                 test: /\.js$/,
                 //indica alguma pasta a não ser testada
                 exclude: /node_modules/,
-                //OBRIGATÒRIO: indica o loader a ser utilisado para o tipo de arquivo definido
+                //OBRIGATÒRIO: indica o loader a ser utilizado para o tipo de arquivo definido
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'}
+                ]
+            },
+            {
+                test: /.*\.(gif|png|jpe?g)$/i,
+                use: [
+                    {loader: 'file-loader'}
+                ]
             }
         ]
     }
